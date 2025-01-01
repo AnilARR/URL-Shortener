@@ -1,0 +1,12 @@
+CREATE DATABASE UrlShortenerDb;
+
+USE UrlShortenerDb;
+
+CREATE TABLE Urls (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    LongUrl NVARCHAR(MAX),
+    ShortUrl NVARCHAR(50),
+    ClickCount INT DEFAULT 0,
+	shortUrlCode NVARCHAR(50),
+    CreatedAt DATETIME DEFAULT GETDATE()
+);

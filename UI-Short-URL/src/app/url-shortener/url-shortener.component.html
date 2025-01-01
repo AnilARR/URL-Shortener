@@ -1,0 +1,66 @@
+̥̥<div class="page-container">
+  <!-- New Header -->
+  <header class="page-header">
+    <img src="assets/logo.webp" alt="Logo" class="logo"> <!-- Updated logo -->
+     <h1 style="justify-content: center;">URL Shortener</h1>
+  </header>
+   <!-- Secondary Header with View Analytics Button -->
+   <!-- New Section for View Analytics Button -->
+<div class="analytics-header">
+  <a [routerLink]="['/analytics']" 
+     class="btn btn-success">
+    View Analytics
+  </a>
+</div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="card">
+      <div class="card-header">
+        <h2 class="text-center">URL Shortener</h2>
+      </div>
+      <div class="card-body">
+        <form (ngSubmit)="generateShortUrl()">
+          <div class="form-group">
+            <!-- <label for="longUrl" class="form-label">Enter Long URL</label> -->
+            <input
+              type="text"
+              class="form-control"
+              id="longUrl"
+              [(ngModel)]="longUrl"
+              name="longUrl"
+              placeholder="Enter your long URL here"
+              required
+            />
+          </div>
+          <div class="form-group text-center mt-3">
+            <button type="submit" class="btn btn-primary btn-lg">
+              Generate Short URL
+            </button>
+          </div>
+        </form>
+
+        <!-- Display Short URL and Copy Button -->
+        <div *ngIf="shortUrl" class="short-url-container mt-4">
+          <h4>Your Shortened URL:</h4>
+          <div class="short-url-container-inline">
+            <a [href]="shortUrl" target="_blank" class="short-url">{{ shortUrl }}</a>
+            <button class="btn btn-success ml-3" (click)="copyToClipboard()" [disabled]="isLoading">
+              {{ copied ? 'Copied!' : 'Copy to Clipboard' }}
+            </button>
+          </div>
+        </div>
+
+        <!-- Display Error Message -->
+        <div *ngIf="error" class="alert alert-danger mt-4 text-center">
+          {{ error }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- New Footer -->
+  <footer class="page-footer">
+    <p>&copy; 2024 URL Shortener. All rights reserved.</p>
+  </footer>
+</div>

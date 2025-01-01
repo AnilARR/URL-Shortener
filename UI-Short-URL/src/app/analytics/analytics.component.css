@@ -1,0 +1,294 @@
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #6c87aa; /* Light gray background for a clean, professional look */
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #333; /* Dark gray for text for readability */
+  }
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .header-left, .header-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .nav-menu ul li {
+    margin-right: 20px;
+    position: relative;
+  }
+  
+  .nav-menu ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+  }
+  
+  .nav-menu ul li ul.active {
+    display: block;
+  }
+  
+  .user-profile {
+    display: flex;
+    align-items: center;
+  }
+  
+  .user-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .dark-theme {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .dark-theme .page-header {
+    background-color: #222;
+    border-bottom: 1px solid #444;
+  }
+  
+  /* Page Container */
+  .page-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+  }
+  
+  /* New Header Styling */
+  .page-header {
+    background-color: #514141; /* Elegant dark blue */
+    padding: 10px 10px 10px;
+    text-align: center;
+    color: wheat;
+    display: inline-flexbox;
+    justify-content: center;
+    align-items: center;
+  }
+  .page-header h1 {
+    margin: 0;
+    font-size: 36px;
+    font-weight: 700;
+  }
+  
+  .page-header img {
+    height: 120px; /* Logo size */
+    margin-right: 10px; /* Space between logo and text */
+  }
+  
+  /* New Footer Styling */
+  .page-footer {
+    background-color: #514141; /* Same elegant dark blue as header */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    font-size: 14px;
+  }
+  
+  /* Container Styling */
+  .container {
+    max-width: 600px; /* Wider card for a more professional look */
+    width: 100%;
+    padding: 30px;
+    background-color: rgb(235, 191, 201);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin: 40px auto;
+  }
+  
+  /* Card Styling */
+  .card {
+    background-color: #f8f9fa; /* Light gray card background */
+    border-radius: 12px;
+    padding: 25px;
+  }
+  
+  .card-header {
+    background-color: rgb(235, 214, 228); /* Professional blue accent */
+    color: black;
+    padding: 7px;
+    text-align: center;
+    justify-content: center;
+    border-radius: 10px;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  /* Input & Button Styling */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-label {
+    font-weight: bold;
+    color: #555;
+    display: block;
+    text-align: center;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+    display: block;
+  }
+  
+  .form-control:focus {
+    border-color: #007bff; /* Blue focus color for input fields */
+    outline: none;
+  }
+  
+  .btn-primary {
+    background-color: #007bff; /* Professional blue for the button */
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight scaling effect */
+  }
+  
+  /* Short URL Section */
+  .short-url-container {
+    margin-top: 20px;
+  }
+  
+  .short-url a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  
+  .short-url a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+  
+  /* Error Message Styling */
+  .alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+  }
+  
+  /* Loading Spinner Styling */
+  .spinner {
+    border: 4px solid #f3f3f3; /* Light gray background for spinner */
+    border-top: 4px solid #007bff; /* Blue spinner */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+    margin: 20px auto;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Button Styling for Copy */
+  .btn-success {
+    background-color: #28a745;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .btn-success:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+  }
+  
+  /* Short URL Section (Inline Style) */
+  .short-url-container-inline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px; /* Space between URL and the button */
+  }
+  
+  .short-url {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 600;
+    font-size: 18px;
+    flex: 1; /* Take the remaining space */
+  }
+  
+  .short-url:hover {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+  
+  /* New Section for Analytics Button (Minimal Changes) */
+  .analytics-header {
+    text-align: center; /* Ensure it aligns well */
+    margin-top: 20px; /* Space from previous content */
+  }
+  
+  .analytics-header .btn-info {
+    background-color: #007bff; /* Match existing button style */
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .analytics-header .btn-info:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  .analytics-header .btn-info.disabled {
+    background-color: #d6d6d6; /* Gray background for disabled state */
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  

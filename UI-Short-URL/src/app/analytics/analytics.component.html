@@ -1,0 +1,66 @@
+<div class="page-container">
+    <!-- Header -->
+    <header class="page-header">
+      <img src="assets/logo.webp" alt="Logo" class="logo">
+      <h1>URL Shortener</h1>
+    </header>
+    <div class="text-center mt-4">
+        <button (click)="navigateToUrlShortener()" class="btn btn-primary">
+          Back to URL Shortener
+        </button>
+      </div>
+    <!-- Analytics Section -->
+    <div class="analytics-header">
+      <h2>URL Analytics</h2>
+    </div>
+  
+    <!-- Main Content -->
+    <div class="container">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="text-center">Enter Shortened URL Code</h3>
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="fetchAnalytics()">
+            <div class="form-group">
+              <label for="shortenedCode" class="form-label">Shortened URL Code</label>
+              <input
+                type="text"
+                class="form-control"
+                id="shortenedCode"
+                [(ngModel)]="shortenedCode"
+                name="shortenedCode"
+                placeholder="Enter your shortened URL code here"
+                required
+              />
+            </div>
+            <div class="form-group text-center mt-3">
+              <button type="submit" class="btn btn-primary btn-lg" [disabled]="isLoading">
+                Fetch Analytics
+              </button>
+            </div>
+          </form>
+  
+          <!-- Display Analytics Info -->
+          <div *ngIf="analyticsData" class="analytics-info mt-4">
+            <h4>Analytics Info</h4>
+            <p><strong>Shortened URL:</strong> <a href="{{ analyticsData.shortUrl }}" target="_blank">{{ analyticsData.shortUrl }}</a></p>
+            <p><strong>Click Count:</strong> {{ analyticsData.clickCount }}</p>
+          </div>
+  
+          <!-- Display Error Message -->
+          <div *ngIf="errorMessage" class="alert alert-danger mt-4 text-center">
+            {{ errorMessage }}
+          </div>
+  
+          <!-- Loading Spinner -->
+          <div *ngIf="isLoading" class="spinner"></div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Footer -->
+    <footer class="page-footer">
+      <p>&copy; 2024 URL Shortener. All rights reserved.</p>
+    </footer>
+</div>
